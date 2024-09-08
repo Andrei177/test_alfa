@@ -1,0 +1,18 @@
+.products-page{
+    animation: show-page 1s ease;
+}
+.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 11px;
+    padding: 17px;
+}
+
+@keyframes show-page{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,20 @@
+.product-item-page{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80vw;
+    animation: show-page 1s ease;
+}
+.like-img{
+    height: 50px;
+    width: auto;
+}
+@keyframes show-page{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

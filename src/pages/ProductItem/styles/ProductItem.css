@@ -1,0 +1,22 @@
+.product-item{
+    border: 3px solid blueviolet;
+    border-radius: 7px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    animation: show-product 0.5s ease;
+}
+.like-img{
+    height: 50px;
+    width: auto;
+}
+@keyframes show-product{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
