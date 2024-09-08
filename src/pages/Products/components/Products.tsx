@@ -56,7 +56,7 @@ const Products = () => {
           ? <h3>Идёт загрузка...</h3>
           : searchedProducts.length
             ? searchedProducts.filter((_, index) => index >= (selectedPage * limit - limit) && index < (selectedPage * limit)).map(product => <ProductItem key={product.id} product={product} />)
-            : <h2>Продукты не найдены...</h2>
+            : <h2>Продукты не найдены</h2>
         }
       </div>
     </div>

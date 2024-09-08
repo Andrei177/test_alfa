@@ -15,11 +15,7 @@ const ProductItem: FC<IPropsProductItem> = ({product}) => {
 
   const navigate = useNavigate();
 
-  const {products, setProducts} = useProducts();
-
-  const removeProduct = (product: IProductItem) => {
-    setProducts([...products.filter(prod => prod.id !== product.id)])
-  }
+  const {products, setProducts, removeProduct} = useProducts();
 
   return (
     <div className="product-item" onClick={() => navigate(`/products/${product.id}`)}>
@@ -41,7 +37,8 @@ const ProductItem: FC<IPropsProductItem> = ({product}) => {
       </div>
       <button onClick={(e) => {
         e.stopPropagation()
-        removeProduct(product)}
+        removeProduct(product)
+      }
       }>X</button>
     </div>
   )

@@ -8,7 +8,7 @@ interface IPropsPagination{
     setSelectedPage: (num: number) => void
 }
 
-const Pagination: FC<IPropsPagination> = ({numberProducts, limit=10, selectedPage, setSelectedPage}) => {
+const Pagination: FC<IPropsPagination> = ({numberProducts, limit, selectedPage, setSelectedPage}) => {
   const numberPages = Math.ceil(numberProducts / limit);
 
   const arrNumbersPages = [];
@@ -18,7 +18,7 @@ const Pagination: FC<IPropsPagination> = ({numberProducts, limit=10, selectedPag
   }
   return (
     <div className="pagination">
-      {arrNumbersPages.map(number => <Button onClick={() => {setSelectedPage(number)}} active={selectedPage === number}>{number}</Button>)}
+      {arrNumbersPages.map(number => <Button key={number} onClick={() => {setSelectedPage(number)}} active={selectedPage === number}>{number}</Button>)}
     </div>
   )
 }

@@ -6,9 +6,9 @@ import "../styles/CreateProduct.css"
 const CreateProduct = () => {
 
   const {title, description, price, setTitle, setDescription, setPrice} = useCreateProduct();
-  const {products, setProducts} = useProducts();
+  const {products, addProduct} = useProducts();
 
-  const addProduct = () => {
+  const addProductStore = () => {
     const newProduct: IProductItem = {
       id: products[products.length - 1].id + 1,
       title,
@@ -16,7 +16,7 @@ const CreateProduct = () => {
       price,
       like: false
     }
-    setProducts([...products, newProduct])
+    addProduct(newProduct)
     alert("Продукт успешно создан!")
   }
 
@@ -26,7 +26,7 @@ const CreateProduct = () => {
       <input type="text" placeholder="title" value={title} onChange={e => setTitle(e.target.value)}/>
       <textarea style={{resize: "none"}} placeholder="description" value={description} onChange={e => setDescription(e.target.value)}/>
       <input type="number" placeholder="price" value={price} onChange={e => setPrice(+e.target.value)}/>
-      <Button onClick={addProduct} active={!!(title && description && price)}>Создать</Button>
+      <Button onClick={addProductStore} active={!!(title && description && price)}>Создать</Button>
     </div>
   )
 }
